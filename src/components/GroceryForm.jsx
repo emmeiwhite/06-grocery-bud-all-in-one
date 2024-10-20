@@ -7,16 +7,16 @@ export default function GroceryForm({ getItem }) {
   function handleSubmit(e) {
     e.preventDefault()
 
-    if (item) {
-      const itemObj = {
-        id: nanoid(),
-        name: item,
-        isChecked: false
-      }
-      getItem(itemObj)
+    if (!item) return
 
-      setItem('')
+    const itemObj = {
+      id: nanoid(),
+      name: item,
+      completed: false
     }
+    getItem(itemObj)
+
+    setItem('')
   }
 
   return (
