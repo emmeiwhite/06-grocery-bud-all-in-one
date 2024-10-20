@@ -21,14 +21,20 @@ export default function GroceryForm({ getItem }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-row">
+      <h4>Grocery Bud</h4>
+      <div className="form-control">
         <input
           type="text"
           onChange={e => setItem(e.target.value)}
           value={item}
           className="form-input"
         />
-        <button className="btn">Add Item</button>
+        <button
+          className="btn"
+          type="submit"
+        >
+          Add Item
+        </button>
       </div>
     </form>
   )
