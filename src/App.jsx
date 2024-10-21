@@ -7,7 +7,7 @@ const setLocalStorage = items => {
 }
 
 const getLocalStorage = () => {
-  const items = localStorage.getItem(JSON.parse('list'))
+  const items = JSON.parse(localStorage.getItem('list'))
   if (items) {
     return items
   } else {
