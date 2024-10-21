@@ -42,6 +42,7 @@ const App = () => {
       return item
     })
 
+    setLocalStorage(updatedList)
     // Only state updates trigger a re-render
     setListItems(updatedList)
   }
