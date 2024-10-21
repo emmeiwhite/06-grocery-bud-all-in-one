@@ -7,11 +7,16 @@ const setLocalStorage = items => {
 }
 
 const getLocalStorage = () => {
-  localStorage.getItem(JSON.parse('list'))
+  const items = localStorage.getItem(JSON.parse('list'))
+  if (items) {
+    return items
+  } else {
+    return []
+  }
 }
 
 const App = () => {
-  const [listItems, setListItems] = useState([])
+  const [listItems, setListItems] = useState(getLocalStorage())
 
   function getItem(groceryItem) {
     setListItems(list => {
