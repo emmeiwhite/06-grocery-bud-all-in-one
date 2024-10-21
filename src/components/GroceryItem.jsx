@@ -2,18 +2,16 @@ import { useState } from 'react'
 
 export default function GroceryItem({ id, name, completed, handleDelete, handleChecked }) {
   return (
-    <div>
+    <div className="single-item">
       <p>
         <input
           type="checkbox"
           checked={completed}
-          name=""
-          id=""
           onChange={e => handleChecked(id)}
         />
-        <span>{name}</span>{' '}
+        <span style={{ textDecoration: completed ? 'line-through' : 'none' }}>{name}</span>{' '}
         <button
-          className="btn delete"
+          className="btn remove-btn"
           onClick={() => handleDelete(id)}
         >
           delete
