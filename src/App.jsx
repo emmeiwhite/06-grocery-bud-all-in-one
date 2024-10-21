@@ -6,6 +6,10 @@ const setLocalStorage = items => {
   localStorage.setItem('list', JSON.stringify(items))
 }
 
+const getLocalStorage = () => {
+  localStorage.getItem(JSON.parse('list'))
+}
+
 const App = () => {
   const [listItems, setListItems] = useState([])
 
