@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import GroceryForm from './components/GroceryForm'
 import GroceryList from './components/GroceryList'
+import { ToastContainer, toast } from 'react-toastify'
 
 const setLocalStorage = items => {
   localStorage.setItem('list', JSON.stringify(items))
@@ -22,6 +23,8 @@ const App = () => {
     setListItems(list => {
       const updatedList = [...list, groceryItem]
       setLocalStorage(updatedList)
+
+      toast.success('item added to the list')
       return updatedList
     })
   }
@@ -32,6 +35,7 @@ const App = () => {
       setLocalStorage(listUpdatedAfterDelete)
       return listUpdatedAfterDelete
     })
+    toast.success('deleted the item successfully')
   }
 
   function handleChecked(id) {
